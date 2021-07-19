@@ -1,0 +1,161 @@
+[
+    {
+        "id": "9d77c64a.f10828",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2792ca7a.c7a686",
+        "type": "ui_switch",
+        "z": "9d77c64a.f10828",
+        "name": "Switch",
+        "label": "Switch",
+        "tooltip": "",
+        "group": "d7c12b74.277828",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 500,
+        "y": 280,
+        "wires": [
+            [
+                "8ea3e7d8.4e2688"
+            ]
+        ]
+    },
+    {
+        "id": "8ea3e7d8.4e2688",
+        "type": "mqtt out",
+        "z": "9d77c64a.f10828",
+        "name": "",
+        "topic": "sensors/light1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c9e803b1.c2285",
+        "x": 720,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b260e3fc.28aef",
+        "type": "inject",
+        "z": "9d77c64a.f10828",
+        "name": "0 (Light OFF)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "sensors/light1",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "2792ca7a.c7a686"
+            ]
+        ]
+    },
+    {
+        "id": "48d733bb.c6648c",
+        "type": "inject",
+        "z": "9d77c64a.f10828",
+        "name": "1 (light ON)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "sensors/light1",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "2792ca7a.c7a686"
+            ]
+        ]
+    },
+    {
+        "id": "d7c12b74.277828",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "f57a184e.4f4fa",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c9e803b1.c2285",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt.eclipseprojects.io",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f57a184e.4f4fa",
+        "type": "ui_tab",
+        "name": "Jetson Nano",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
