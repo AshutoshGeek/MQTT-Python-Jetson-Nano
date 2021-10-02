@@ -9,6 +9,12 @@ A Python program whcih subscribes to a topic of a MQTT broker and outputs to GPI
 - [Demonstration YouTube Video](https://youtu.be/WPmzoYwXj00)
 
 
+## Installation
+
+- [Install Node.js](https://nodejs.org/en/download/package-manager)
+- [Install Node-RED](https://nodered.org/docs/getting-started/local)
+- [Install node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard)
+
 ## Run Locally
 
 Clone the project
